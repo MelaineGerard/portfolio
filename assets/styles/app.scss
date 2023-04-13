@@ -1,0 +1,16 @@
+@import 'variables';
+@import 'reset';
+@import 'utils/texts';
+@import "utils/boxes";
+@import "utils/margins";
+@import url(https://fonts.bunny.net/css?family=montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i);
+@import "navbars";
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: $background;
+    color: $text-color;
+}
