@@ -18,6 +18,7 @@ Encore
         config.corejs = '3.23';
     })
     .enableSassLoader()
+    .enablePostCssLoader()
     .enableIntegrityHashes(Encore.isProduction())
 ;
 
