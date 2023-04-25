@@ -53,39 +53,30 @@
             <div class="text-xl font-bold">Expériences</div>
             <div class="col-span-2">
                 <div class="grid grid-cols-2 gap-8">
-                    <div class="p-6 bg-white border border-gray-200 rounded-lg shadow-md">
-                        <a href="https://additimedia.ouest-france.fr/qui-sommes-nous/">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Additi Média <span class="font-thin text-lg">Alternance</span></h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700">Alternance associé à mon bachelor informatique consitant à améliorer et maintenir des applications web symfony.</p>
-                        <p class="mb-3 font-normal text-gray-700">Septembre 2022 - Présent</p>
-                        <a href="https://additimedia.ouest-france.fr/qui-sommes-nous/" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-slate-600 rounded-lg hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                            Découvrir
-                            <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </a>
-                    </div>
-                    <div class="p-6 bg-white border border-gray-200 rounded-lg shadow-md">
-                        <a href="https://dyjix.eu/">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Dyjix <span class="font-thin text-lg">Stage</span></h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700">Stage dans le cadre de ma formation consistant à réaliser un panel de gestion d'inventaire sous la forme d'une application web en Python.</p>
-                        <p class="mb-3 font-normal text-gray-700">mars 2022 - avril 2022</p>
-                        <a href="https://dyjix.eu/" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-slate-600 rounded-lg hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                            Découvrir
-                            <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </a>
-                    </div>
-                    <div class="p-6 bg-white border border-gray-200 rounded-lg shadow-md">
-                        <a href="https://www.ouiheberg.com/fr/propos">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">OuiHeberg <span class="font-thin text-lg">Stage</span></h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700">Stage dans le cadre de ma formation consistant à modifier le panel Pterodactyl en remplaçant l'utilisation de Docker par Kubernetes.</p>
-                        <p class="mb-3 font-normal text-gray-700">mai 2021 - juin 2021</p>
-                        <a href="https://www.ouiheberg.com/fr/propos" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-slate-600 rounded-lg hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                            Découvrir
-                            <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </a>
-                    </div>
+                    {{ component('professional_experience', {
+                        companyName: 'Additi Média',
+                        jobType: 'Alternance',
+                        description: 'Alternance associé à mon bachelor informatique consitant à améliorer et maintenir des applications web symfony.',
+                        startDate: 'Septembre 2022',
+                        endDate: 'Présent',
+                        companyWebsite: 'https://additimedia.ouest-france.fr/qui-sommes-nous/',
+                    }) }}
+                    {{ component('professional_experience', {
+                        companyName: 'Dyjix',
+                        jobType: 'Stage',
+                        description: "Stage dans le cadre de ma formation consistant à réaliser un panel de gestion d'inventaire sous la forme d'une application web en Python.",
+                        startDate: 'Mars 2022',
+                        endDate: 'Avril 2022',
+                        companyWebsite: 'https://dyjix.eu/',
+                    }) }}
+                    {{ component('professional_experience', {
+                        companyName: 'OuiHeberg',
+                        jobType: 'Stage',
+                        description: "Stage dans le cadre de ma formation consistant à modifier le panel Pterodactyl en remplaçant l'utilisation de Docker par Kubernetes.",
+                        startDate: 'Mai 2021',
+                        endDate: 'Juin 2021',
+                        companyWebsite: 'https://www.ouiheberg.com/fr/propos',
+                    }) }}
                 </div>
             </div>
         </div>
@@ -96,46 +87,21 @@
             <div class="text-xl font-bold">Projets</div>
             <div class="col-span-2">
                 <div class="grid grid-cols-2 gap-8">
-                    <div class="p-6 bg-white border border-gray-200 rounded-lg shadow-md">
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Projet 1</h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis inventore quasi aliquam? Voluptatibus maxime voluptatum.</p>
-                        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-slate-600 rounded-lg hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                            Découvrir
-                            <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </a>
-                    </div>
-                    <div class="p-6 bg-white border border-gray-200 rounded-lg shadow-md">
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Projet 2</h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis inventore quasi aliquam? Voluptatibus maxime voluptatum.</p>
-                        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-slate-600 rounded-lg hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                            Découvrir
-                            <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </a>
-                    </div>
-                    <div class="p-6 bg-white border border-gray-200 rounded-lg shadow-md">
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Projet 3</h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis inventore quasi aliquam? Voluptatibus maxime voluptatum.</p>
-                        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-slate-600 rounded-lg hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                            Découvrir
-                            <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </a>
-                    </div>
-                    <div class="p-6 bg-white border border-gray-200 rounded-lg shadow-md">
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Projet 4</h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis inventore quasi aliquam? Voluptatibus maxime voluptatum.</p>
-                        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-slate-600 rounded-lg hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                            Découvrir
-                            <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </a>
-                    </div>
+                    {{ component('project', {
+                        projectName: 'Projet 1',
+                        projectDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis inventore quasi aliquam? Voluptatibus maxime voluptatum.',
+                        projectLink: '#project1',
+                    }) }}
+                    {{ component('project', {
+                        projectName: 'Projet 2',
+                        projectDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis inventore quasi aliquam? Voluptatibus maxime voluptatum.',
+                        projectLink: '#project2',
+                    }) }}
+                    {{ component('project', {
+                        projectName: 'Projet 3',
+                        projectDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis inventore quasi aliquam? Voluptatibus maxime voluptatum.',
+                        projectLink: '#project3',
+                    }) }}
                 </div>
             </div>
         </div>
