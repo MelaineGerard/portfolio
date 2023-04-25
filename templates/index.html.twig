@@ -1,1 +1,109 @@
 {% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mx-auto px-16">
+        <div class="w-full h-48 bg-gray-300 rounded-lg">
+        </div>
+        <div class="flex flex-row h-40">
+            <img src="https://files.melaine-gerard.fr/moi.png" alt="Melaine Gérard" class="absolute top-48 rounded-full bg-gray-200 h-48 ml-8 px-2 pt-4">
+            <div class="ml-60 mt-4 flex flex-col">
+                <div class="text-2xl font-bold">
+                    Melaine Gérard
+                </div>
+                <div class="text-md font-thin">
+                    Développeur Web Fullstack Junior basé à Rennes.
+                </div>
+            </div>
+            <div class="ml-auto mr-8 mt-4">
+                <a href="https://github.com/MelaineGerard" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/melaine-gerard/" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container mx-auto px-16">
+        <hr>
+        <div class="mt-4 grid grid-cols-3">
+            <div class="text-xl font-bold">
+                A propos
+            </div>
+            <div class="col-span-2 text-lg">
+                Je suis un développeur Web Fullstack basé à Rennes. J'utilise principalement le langage PHP pour la partie Backend avec les frameworks tel que Symfony et Laravel.
+                Pour la partie Frontend, j'utilise des frameworks CSS tel que TailwindCSS et Bootstrap.
+                <br>
+                <br>
+                Je suis passionné par l'informatique depuis que j'ai 10 ans.
+                <div class="mt-4 px-4 py-6 rounded-lg grid grid-cols-3 grid-rows-2 gap-y-3 bg-slate-200">
+                    <div>Localisation</div>
+                    <div>Github</div>
+                    <div>Email</div>
+                    <div class="font-bold">Rennes, France</div>
+                    <div class="font-bold"><a href="https://github.com/MelaineGerard">MelaineGerard <i class="fa-solid fa-arrow-right"></i></a></div>
+                    <div class="font-bold"><a href="mailto:pro@melaine-gerard.fr">pro@melaine-gerard.fr <i class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 container mx-auto px-16">
+        <hr>
+        <div class="my-4 grid grid-cols-3">
+            <div class="text-xl font-bold">Expériences</div>
+            <div class="col-span-2">
+                <div class="grid grid-cols-2 gap-8">
+                    {{ component('professional_experience', {
+                        companyName: 'Additi Média',
+                        jobType: 'Alternance',
+                        description: 'Alternance associé à mon bachelor informatique consitant à améliorer et maintenir des applications web symfony.',
+                        startDate: 'Septembre 2022',
+                        endDate: 'Présent',
+                        companyWebsite: 'https://additimedia.ouest-france.fr/qui-sommes-nous/',
+                    }) }}
+                    {{ component('professional_experience', {
+                        companyName: 'Dyjix',
+                        jobType: 'Stage',
+                        description: "Stage dans le cadre de ma formation consistant à réaliser un panel de gestion d'inventaire sous la forme d'une application web en Python.",
+                        startDate: 'Mars 2022',
+                        endDate: 'Avril 2022',
+                        companyWebsite: 'https://dyjix.eu/',
+                    }) }}
+                    {{ component('professional_experience', {
+                        companyName: 'OuiHeberg',
+                        jobType: 'Stage',
+                        description: "Stage dans le cadre de ma formation consistant à modifier le panel Pterodactyl en remplaçant l'utilisation de Docker par Kubernetes.",
+                        startDate: 'Mai 2021',
+                        endDate: 'Juin 2021',
+                        companyWebsite: 'https://www.ouiheberg.com/fr/propos',
+                    }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 container mx-auto px-16">
+        <hr>
+        <div class="my-4 grid grid-cols-3">
+            <div class="text-xl font-bold">Projets</div>
+            <div class="col-span-2">
+                <div class="grid grid-cols-2 gap-8">
+                    {{ component('project', {
+                        projectName: 'Projet 1',
+                        projectDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis inventore quasi aliquam? Voluptatibus maxime voluptatum.',
+                        projectLink: '#project1',
+                    }) }}
+                    {{ component('project', {
+                        projectName: 'Projet 2',
+                        projectDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis inventore quasi aliquam? Voluptatibus maxime voluptatum.',
+                        projectLink: '#project2',
+                    }) }}
+                    {{ component('project', {
+                        projectName: 'Projet 3',
+                        projectDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis inventore quasi aliquam? Voluptatibus maxime voluptatum.',
+                        projectLink: '#project3',
+                    }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

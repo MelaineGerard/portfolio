@@ -14,5 +14,4 @@ final class NavbarItemComponent
     public function __construct()
     {
     }
-
 }
