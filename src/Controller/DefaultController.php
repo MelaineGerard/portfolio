@@ -26,4 +26,13 @@ class DefaultController extends AbstractController
     {
         return $this->render('contact.html.twig');
     }
+
+    #[Route('/projects', name: 'app_projects')]
+    public function projects(EntityManagerInterface $entityManager): Response
+    {
+        $projects = $entityManager->getRepository(Project::class)->findAll();
+        return $this->render('projects.html.twig', [
+            'projects' => $projects,
+        ]);
+    }
 }
