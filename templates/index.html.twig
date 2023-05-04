@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container mx-auto px-16">
-        <div class="w-full h-48 bg-gray-300 rounded-lg">
-        </div>
-        <div class="flex flex-row h-40">
-            <img src="https://files.melaine-gerard.fr/moi.png" alt="Melaine Gérard" class="absolute top-48 rounded-full bg-gray-200 h-48 ml-8 px-2 pt-4">
-            <div class="ml-60 mt-4 flex flex-col">
+    <div class="container mx-auto px-4 lg:px-16">
+        <img src="https://images.hdqwalls.com/download/moon-light-ride-4k-e3-2048x1152.jpg" alt=""  class="hidden lg:block w-full h-48 object-cover object-top rounded-lg" style="filter: grayscale(0.4) brightness(0.8);">
+        <div class="flex flex-col lg:flex-row lg:h-40">
+            <img src="https://files.melaine-gerard.fr/moi.png" alt="Melaine Gérard"
+                 class="lg:absolute lg:top-48 rounded-full bg-gray-200 w-48 flex self-center lg:w-auto h-48 lg:ml-8 px-2 pt-4">
+            <div class="lg:ml-60 mt-4 flex flex-col">
                 <div class="text-2xl font-bold">
                     Melaine Gérard
                 </div>
@@ -14,45 +14,56 @@
                     Développeur Web Fullstack Junior basé à Rennes.
                 </div>
             </div>
-            <div class="ml-auto mr-8 mt-4">
-                <a href="https://github.com/MelaineGerard" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">
+            <div class="lg:ml-auto mr-8 mt-4 flex flex-col items-center lg:block w-full lg:w-auto">
+                <a href="https://github.com/MelaineGerard"
+                   class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">
                     <i class="fa-brands fa-github"></i> GitHub
                 </a>
-                <a href="https://www.linkedin.com/in/melaine-gerard/" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">
+                <a href="https://www.linkedin.com/in/melaine-gerard/"
+                   class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">
                     <i class="fa-brands fa-linkedin"></i> LinkedIn
                 </a>
             </div>
         </div>
     </div>
-    <div class="container mx-auto px-16">
+    <div class="container mx-auto  px-4 lg:px-16">
         <hr>
-        <div class="mt-4 grid grid-cols-3">
-            <div class="text-xl font-bold">
+        <div class="mt-4 grid grid-cols-1 lg:grid-cols-3">
+            <div class="text-xl font-bold text-center mb-4 lg:mb-0 lg:text-left">
                 A propos
             </div>
             <div class="col-span-2 text-lg">
-                Je suis un développeur Web Fullstack basé à Rennes. J'utilise principalement le langage PHP pour la partie Backend avec les frameworks tel que Symfony et Laravel.
+                Je suis un développeur Web Fullstack basé à Rennes. J'utilise principalement le langage PHP pour la
+                partie Backend avec les frameworks tel que Symfony et Laravel.
                 Pour la partie Frontend, j'utilise des frameworks CSS tel que TailwindCSS et Bootstrap.
                 <br>
                 <br>
                 Je suis passionné par l'informatique depuis que j'ai 10 ans.
-                <div class="mt-4 px-4 py-6 rounded-lg grid grid-cols-3 grid-rows-2 gap-y-3 bg-slate-200">
-                    <div>Localisation</div>
-                    <div>Github</div>
-                    <div>Email</div>
-                    <div class="font-bold">Rennes, France</div>
-                    <div class="font-bold"><a href="https://github.com/MelaineGerard">MelaineGerard <i class="fa-solid fa-arrow-right"></i></a></div>
-                    <div class="font-bold"><a href="mailto:pro@melaine-gerard.fr">pro@melaine-gerard.fr <i class="fa-solid fa-arrow-right"></i></a></div>
+                <div class="mt-4 px-4 py-6 rounded-lg grid grid-cols-1 lg:grid-cols-3 gap-y-3 bg-slate-200">
+                    <div>
+                        <div>Localisation</div>
+                        <div class="font-bold">Rennes, France</div>
+                    </div>
+                    <div>
+                        <div>Github</div>
+                        <div class="font-bold"><a href="https://github.com/MelaineGerard">MelaineGerard <i
+                                        class="fa-solid fa-arrow-right"></i></a></div>
+                    </div>
+                    <div>
+                        <div>Email</div>
+                        <div class="font-bold"><a href="mailto:pro@melaine-gerard.fr">pro@melaine-gerard.fr <i
+                                        class="fa-solid fa-arrow-right"></i></a></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="mt-4 container mx-auto px-16">
+    <div class="mt-4 container mx-auto  px-4 lg:px-16">
         <hr>
-        <div class="my-4 grid grid-cols-3">
-            <div class="text-xl font-bold">Expériences</div>
+        <div class="my-4 grid grid-cols-1 lg:grid-cols-3">
+            <div class="text-xl font-bold text-center mb-4 lg:mb-0 lg:text-left">Expériences</div>
             <div class="col-span-2">
-                <div class="grid grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {{ component('professional_experience', {
                         companyName: 'Additi Média',
                         jobType: 'Alternance',
@@ -82,22 +93,22 @@
         </div>
     </div>
     {% if projects %}
-        <div class="mt-4 container mx-auto px-16">
-        <hr>
-        <div class="my-4 grid grid-cols-3">
-            <div class="text-xl font-bold">Projets</div>
-            <div class="col-span-2">
-                <div class="grid grid-cols-2 gap-8">
-                    {% for project in projects %}
-                        {{ component('project', {
-                            projectName: project.name,
-                            projectDescription: project.description,
-                            projectLink: project.link,
-                        }) }}
-                    {% endfor %}
+        <div class="mt-4 container mx-auto  px-4 lg:px-16">
+            <hr>
+            <div class="my-4 grid grid-cols-1 lg:grid-cols-3">
+                <div class="text-xl font-bold text-center mb-4 lg:mb-0 lg:text-left">Projets</div>
+                <div class="col-span-2">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        {% for project in projects %}
+                            {{ component('project', {
+                                projectName: project.name,
+                                projectDescription: project.description,
+                                projectLink: project.link,
+                            }) }}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     {% endif %}
 {% endblock %}

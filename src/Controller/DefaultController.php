@@ -53,7 +53,7 @@ class DefaultController extends AbstractController
             $mailer->send($email);
 
             $this->addFlash('success', 'Message envoyé ! Merci de nous avoir contacté.');
-            $this->redirectToRoute('app_contact');
+            return $this->redirectToRoute('app_contact');
         }
 
         return $this->render('contact.html.twig', [

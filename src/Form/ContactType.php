@@ -12,6 +12,13 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ContactType extends AbstractType
 {
+
+    public function __construct(
+        private readonly string $hcaptchaSiteKey
+    )
+    {
+    }
+
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -21,7 +28,8 @@ class ContactType extends AbstractType
             ->add('message', TextareaType::class, ['label' => 'Message', 'required' => true])
             ->add('captcha', HCaptchaType::class, [
                 'label' => 'Veuillez prouver que vous êtes humain',
-                'required' => true
+                'required' => true,
+                'hcaptcha_site_key' => $this->hcaptchaSiteKey,
             ])
             ->add('submit', SubmitType::class, ['label' => 'Envoyer'])
         ;
