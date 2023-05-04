@@ -4,6 +4,7 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
+  app.contact_email: '%env(CONTACT_EMAIL)%'
 
 services:
     # default configuration for services in *this* file
@@ -32,3 +33,10 @@ services:
               credentials:
                   key: '%env(AWS_KEY)%'
                   secret: '%env(AWS_SECRET)%'
+
+    Psr\Http\Client\ClientInterface:
+      class: GuzzleHttp\Client
+    Psr\Http\Message\RequestFactoryInterface:
+      class: Nyholm\Psr7\Factory\Psr17Factory
+    Psr\Http\Message\StreamFactoryInterface:
+      class: Nyholm\Psr7\Factory\Psr17Factory
