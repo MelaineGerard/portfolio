@@ -5,14 +5,14 @@ services:
     build:
       context: ./
       dockerfile: ./docker/Dockerfile
-    image: melaine_gerard:latest
+    image: portfolio:latest
     container_name: portfolio
-    privileged: true
     volumes:
-      - ./:/var/www/portfolio:rw
+      - ./:/var/www:rw
     tty: true
+    command: "symfony server:start --port=80"
     labels:
-      - traefik.http.routers.portfolio.rule=Host(`portfolio.melaine-gerard.fr`)
+      - traefik.http.routers.portfolio.rule=Host(`melaine-gerard.fr`)
       - traefik.http.routers.portfolio.tls=true
       - traefik.http.routers.portfolio.tls.certresolver=lets-encrypt
       - traefik.port=80
