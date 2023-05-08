@@ -1,0 +1,46 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="container mx-auto px-8">
+        {% if project.id != null %}
+            <h1 class="text-2xl font-bold text-center">
+                Modification de l'expérience professionnelle {{ project.companyName }}
+            </h1>
+        {% else %}
+            <h1 class="text-2xl font-bold text-center">
+                Création d'une nouvelle expérience professionnelle
+            </h1>
+        {% endif %}
+
+        {{ form_start(form) }}
+        <div class="mb-6">
+            {{ form_label(form.companyName, null, {'labelAttr': {'class': 'block mb-2 text-sm font-medium text-gray-900'}}) }}
+            {{ form_widget(form.companyName, {'attr': {'class': 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'}}) }}
+        </div>
+        <div class="mb-6">
+            {{ form_label(form.description, null, {'labelAttr': {'class': 'block mb-2 text-sm font-medium text-gray-900'}}) }}
+            {{ form_widget(form.description, {'attr': {'class': 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'}}) }}
+        </div>
+        <div class="mb-6">
+            {{ form_label(form.companyWebsite, null, {'labelAttr': {'class': 'block mb-2 text-sm font-medium text-gray-900'}}) }}
+            {{ form_widget(form.companyWebsite, {'attr': {'class': 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'}}) }}
+        </div>
+        <div class="mb-6">
+            {{ form_label(form.startDate, null, {'labelAttr': {'class': 'block mb-2 text-sm font-medium text-gray-900'}}) }}
+            {{ form_widget(form.startDate, {'attr': {'class': 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'}}) }}
+        </div>
+        <div class="mb-6">
+            {{ form_label(form.endDate, null, {'labelAttr': {'class': 'block mb-2 text-sm font-medium text-gray-900'}}) }}
+            {{ form_widget(form.endDate, {'attr': {'class': 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'}}) }}
+        </div>
+
+        <div class="mb-6">
+            {{ form_label(form.jobType, null, {'labelAttr': {'class': 'block mb-2 text-sm font-medium text-gray-900'}}) }}
+            {{ form_widget(form.jobType, {'attr': {'class': 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'}}) }}
+        </div>
+
+        {{ form_widget(form.button, {'attr': {'class': 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center'}}) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+

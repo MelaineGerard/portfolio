@@ -13,9 +13,9 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body class="w-screen h-screen overflow-x-hidden">
+    <body class="w-screen h-screen">
         <div class="body-container">
-            {% include 'partials/header.html.twig' %}
+            {% include 'partials/header-admin.html.twig' %}
             <div class="flex-1">
                 {% block body %}{% endblock %}
             </div>
