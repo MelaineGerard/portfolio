@@ -39,7 +39,7 @@ class ProjectRepository extends ServiceEntityRepository
         }
     }
 
-    public function findFourLastProjects()
+    public function findFourLastProjects(): array
     {
         return $this->createQueryBuilder('p')
             ->orderBy('p.createdAt', 'DESC')
