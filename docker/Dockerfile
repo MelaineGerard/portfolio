@@ -3,7 +3,7 @@ LABEL maintainer="Melaine Gérard <pro@melaine-gerard.fr>"
 LABEL version="0.1"
 
 WORKDIR /var/www/portfolio
-RUN echo exit 0 > /usr/sbin/policy-rc.d
+RUN sed -i "s/^exit 101$/exit 0/" /usr/sbin/policy-rc.d
 
 COPY ./docker/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY ./docker/supervisord.conf /etc/supervisord.conf
