@@ -10,9 +10,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route('/admin/project', name: 'app_admin_project_')]
 class ProjectController extends AbstractController
 {
-    #[Route('/admin/project', name: 'app_admin_project')]
+    #[Route('/', name: 'index')]
     public function index(EntityManagerInterface $entityManager): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
@@ -22,8 +23,8 @@ class ProjectController extends AbstractController
         ]);
     }
 
-    #[Route('/admin/project/create', name: 'app_admin_project_create')]
-    #[Route('/admin/project/edit/{id}', name: 'app_admin_project_edit')]
+    #[Route('/create', name: 'create')]
+    #[Route('/edit/{id}', name: 'edit')]
     public function create(?Project $project, Request $request, EntityManagerInterface $entityManager): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
@@ -38,7 +39,7 @@ class ProjectController extends AbstractController
             $project = $form->getData();
             $entityManager->persist($project);
             $entityManager->flush();
-            return $this->redirectToRoute('app_admin_project');
+            return $this->redirectToRoute('app_admin_project_index');
         }
 
         return $this->render('admin/project/create.html.twig', [
@@ -47,12 +48,12 @@ class ProjectController extends AbstractController
         ]);
     }
 
-    #[Route('/admin/project/delete/{id}', name: 'app_admin_project_delete')]
+    #[Route('/delete/{id}', name: 'delete')]
     public function delete(Project $project, EntityManagerInterface $entityManager): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $entityManager->remove($project);
         $entityManager->flush();
-        return $this->redirectToRoute('app_admin_project');
+        return $this->redirectToRoute('app_admin_project_index');
     }
 }

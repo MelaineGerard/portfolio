@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\ProfessionalExperience;
 use App\Entity\Project;
 use App\Form\ContactType;
 use Aws\S3\S3Client;
@@ -21,8 +22,11 @@ class DefaultController extends AbstractController
     public function index(EntityManagerInterface $entityManager): Response
     {
         $projects = $entityManager->getRepository(Project::class)->findFourLastProjects();
+        $professionalExperiences = $entityManager->getRepository(ProfessionalExperience::class)->findFourLastProfessionalExperience();
+
         return $this->render('index.html.twig', [
             'projects' => $projects,
+            'professionalExperiences' => $professionalExperiences,
         ]);
     }
 
@@ -68,6 +72,15 @@ class DefaultController extends AbstractController
         $projects = $entityManager->getRepository(Project::class)->findAll();
         return $this->render('projects.html.twig', [
             'projects' => $projects,
+        ]);
+    }
+
+    #[Route('/professionalexperience', name: 'app_professional_experiences')]
+    public function professionalExperience(EntityManagerInterface $entityManager): Response
+    {
+        $professionalExperiences = $entityManager->getRepository(ProfessionalExperience::class)->findAll();
+        return $this->render('professionalExperiences.html.twig', [
+            'professionalExperiences' => $professionalExperiences,
         ]);
     }
 }

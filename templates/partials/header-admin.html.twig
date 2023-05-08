@@ -21,8 +21,12 @@
                     navItemText: 'Administration',
                 }) }}
                 {{ component('navbar_item', {
-                    navItemLink: path('app_admin_project'),
+                    navItemLink: path('app_admin_project_index'),
                     navItemText: 'Gestion des projets',
+                }) }}
+                {{ component('navbar_item', {
+                    navItemLink: path('app_admin_professional_experience_index'),
+                    navItemText: 'Gestion des Expériences professionnelles',
                 }) }}
                 {{ component('navbar_item', {
                     navItemLink: path('app_logout'),

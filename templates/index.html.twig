@@ -58,40 +58,28 @@
             </div>
         </div>
     </div>
+    {% if professionalExperiences %}
     <div class="mt-4 container mx-auto  px-4 lg:px-16">
         <hr>
         <div class="my-4 grid grid-cols-1 lg:grid-cols-3">
             <div class="text-xl font-bold text-center mb-4 lg:mb-0 lg:text-left">Expériences</div>
             <div class="col-span-2">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {{ component('professional_experience', {
-                        companyName: 'Additi Média',
-                        jobType: 'Alternance',
-                        description: 'Alternance associé à mon bachelor informatique consitant à améliorer et maintenir des applications web symfony.',
-                        startDate: 'Septembre 2022',
-                        endDate: 'Présent',
-                        companyWebsite: 'https://additimedia.ouest-france.fr/qui-sommes-nous/',
-                    }) }}
-                    {{ component('professional_experience', {
-                        companyName: 'Dyjix',
-                        jobType: 'Stage',
-                        description: "Stage dans le cadre de ma formation consistant à réaliser un panel de gestion d'inventaire sous la forme d'une application web en Python.",
-                        startDate: 'Mars 2022',
-                        endDate: 'Avril 2022',
-                        companyWebsite: 'https://dyjix.eu/',
-                    }) }}
-                    {{ component('professional_experience', {
-                        companyName: 'OuiHeberg',
-                        jobType: 'Stage',
-                        description: "Stage dans le cadre de ma formation consistant à modifier le panel Pterodactyl en remplaçant l'utilisation de Docker par Kubernetes.",
-                        startDate: 'Mai 2021',
-                        endDate: 'Juin 2021',
-                        companyWebsite: 'https://www.ouiheberg.com/fr/propos',
-                    }) }}
+                    {% for professionalExperience in professionalExperiences %}
+                        {{ component('professional_experience', {
+                            companyName: professionalExperience.companyName,
+                            jobType: professionalExperience.jobType,
+                            description: professionalExperience.description,
+                            startDate: professionalExperience.startDate,
+                            endDate: professionalExperience.endDate,
+                            companyWebsite: professionalExperience.companyWebsite,
+                        }) }}
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
+    {% endif %}
     {% if projects %}
         <div class="mt-4 container mx-auto  px-4 lg:px-16">
             <hr>
