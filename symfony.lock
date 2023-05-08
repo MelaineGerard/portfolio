@@ -48,6 +48,30 @@
             "var/storage/.gitignore"
         ]
     },
+    "meteo-concept/hcaptcha-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "e94efaa6cd60c87dc9cc6de56b333a1754187d1e"
+        },
+        "files": [
+            "config/packages/meteo_concept_h_captcha.yaml"
+        ]
+    },
+    "nyholm/psr7": {
+        "version": "1.8",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "a9f242fbadb1407681c019f38c67ab448b056341"
+        },
+        "files": [
+            "config/packages/nyholm_psr7.yaml"
+        ]
+    },
     "phpunit/phpunit": {
         "version": "9.6",
         "recipe": {
