@@ -17,15 +17,19 @@
         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white">
                 {{ component('navbar_item', {
-                    navItemLink: '/',
+                    navItemLink: path('app_index'),
                     navItemText: 'Accueil',
                 }) }}
                 {{ component('navbar_item', {
-                    navItemLink: '/projects',
+                    navItemLink: path('app_projects'),
                     navItemText: 'Projets',
                 }) }}
                 {{ component('navbar_item', {
-                    navItemLink: '/contact',
+                    navItemLink: path('app_professional_experiences'),
+                    navItemText: 'Expériences professionnelles',
+                }) }}
+                {{ component('navbar_item', {
+                    navItemLink: path('app_contact'),
                     navItemText: 'Contact',
                 }) }}
             </ul>
