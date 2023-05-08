@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM ubuntu:22.04
 LABEL maintainer="Melaine Gérard <pro@melaine-gerard.fr>"
 LABEL version="0.1"
 
@@ -11,9 +11,7 @@ COPY ./docker/nginx/vhost.conf /etc/nginx/sites-available/default.conf
 
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
 RUN apt update && apt -yq install wget curl lsb-release apt-transport-https ca-certificates software-properties-common
-RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg && \
-    echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list && \
-    apt update
+RUN LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php -y
 RUN DEBIAN_FRONTEND=noninteractive apt -yq install \
 tzdata \
 nginx \
