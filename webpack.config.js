@@ -19,7 +19,6 @@ Encore
     })
     .enableSassLoader()
     .enablePostCssLoader()
-    .enableIntegrityHashes(Encore.isProduction())
 ;
 
 module.exports = Encore.getWebpackConfig();
