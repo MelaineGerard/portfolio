@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Changelog;
 use App\Entity\ProfessionalExperience;
 use App\Entity\Project;
 use App\Form\ContactType;
@@ -81,6 +82,14 @@ class DefaultController extends AbstractController
         $professionalExperiences = $entityManager->getRepository(ProfessionalExperience::class)->findAll();
         return $this->render('professionalExperiences.html.twig', [
             'professionalExperiences' => $professionalExperiences,
+        ]);
+    }
+    #[Route('/changelog', name: 'app_changelog')]
+public function changelog(EntityManagerInterface $entityManager): Response
+    {
+        $changelogs = $entityManager->getRepository(Changelog::class)->findBy([], ['releasedAt' => 'DESC']);
+        return $this->render('changelog.html.twig', [
+            'changelogs' => $changelogs,
         ]);
     }
 }
