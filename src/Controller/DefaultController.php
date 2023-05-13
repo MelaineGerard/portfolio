@@ -16,6 +16,7 @@ use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class DefaultController extends AbstractController
 {
@@ -85,11 +86,33 @@ class DefaultController extends AbstractController
         ]);
     }
     #[Route('/changelog', name: 'app_changelog')]
-public function changelog(EntityManagerInterface $entityManager): Response
+    public function changelog(EntityManagerInterface $entityManager): Response
     {
         $changelogs = $entityManager->getRepository(Changelog::class)->findBy([], ['releasedAt' => 'DESC']);
         return $this->render('changelog.html.twig', [
             'changelogs' => $changelogs,
         ]);
+    }
+
+    #[Route('/sitemap.xml', name: 'app_sitemap')]
+    public function sitemap(UrlGeneratorInterface $urlGenerator): Response
+    {
+        $urls = [];
+        $urls[] = ['loc' => $urlGenerator->generate('app_index', [], UrlGeneratorInterface::ABSOLUTE_URL), 'changefreq' => 'weekly', 'priority' => '1.0'];
+        $urls[] = ['loc' => $urlGenerator->generate('app_projects', [], UrlGeneratorInterface::ABSOLUTE_URL), 'changefreq' => 'weekly', 'priority' => '0.8'];
+        $urls[] = ['loc' => $urlGenerator->generate('app_professional_experiences', [], UrlGeneratorInterface::ABSOLUTE_URL), 'changefreq' => 'weekly', 'priority' => '0.8'];
+        $urls[] = ['loc' => $urlGenerator->generate('app_changelog', [], UrlGeneratorInterface::ABSOLUTE_URL), 'changefreq' => 'weekly', 'priority' => '0.8'];
+        $urls[] = ['loc' => $urlGenerator->generate('app_contact', [], UrlGeneratorInterface::ABSOLUTE_URL), 'changefreq' => 'weekly', 'priority' => '0.8'];
+
+        $response = new Response(
+            $this->renderView('sitemap.xml.twig', [
+                'urls' => $urls,
+            ]),
+            200
+        );
+
+        $response->headers->set('Content-Type', 'text/xml');
+
+        return $response;
     }
 }
