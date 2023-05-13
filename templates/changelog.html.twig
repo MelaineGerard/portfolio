@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mx-auto px-8">
+        <h1 class="text-3xl font-bold mb-2 text-center">Liste des mises à jours du site</h1>
+        {% for changelog in changelogs %}
+            {{ component('changelog', { changelog: changelog }) }}
+        {% else %}
+            <p class="text-center">Aucune mise à jour pour le moment</p>
+        {% endfor %}
+    </div>
+{% endblock %}
